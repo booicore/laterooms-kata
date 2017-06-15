@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using CheckoutKata.DAL;
 using CheckoutKata.Entities;
 using NUnit.Framework;
 
@@ -26,7 +27,7 @@ namespace CheckoutKataTests
         {
             var sut = CreateSUT();
 
-            var response = sut.GetProductsStubData();
+            var response = sut.GetProductsData();
 
             Assert.IsInstanceOf<List<Product>>(response);
         }

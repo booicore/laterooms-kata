@@ -41,8 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Checkout.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="DAL\GetProductsStubData.cs" />
+    <Compile Include="Interfaces\DAL\IGetProductsStubData.cs" />
+    <Compile Include="Interfaces\Entities\IProduct.cs" />
     <Compile Include="Interfaces\ICheckout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
