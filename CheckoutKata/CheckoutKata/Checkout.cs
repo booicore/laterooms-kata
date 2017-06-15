@@ -11,12 +11,13 @@ namespace CheckoutKata
     {
         public decimal Scan(string sku)
         {
-            return 0.0m;
+
+            throw new NotImplementedException();
         }
 
         public decimal GetTotalPrice()
         {
-            throw new NotImplementedException();
+            return 0.0m;
         }
     }
 }
