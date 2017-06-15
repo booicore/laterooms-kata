@@ -18,7 +18,7 @@ namespace CheckoutKata
             
             // whip through the products and total them up
             
-            // get price of product being scanned
+            // Get a list of the products/prices from somewhere - STUB DATA
             var priceOfProduct = 50m;
 
             return grandTotal += priceOfProduct;
