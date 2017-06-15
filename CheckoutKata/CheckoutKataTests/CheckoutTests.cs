@@ -21,8 +21,11 @@ namespace CheckoutKataTests
         [Test]
         public void Checkout_Scan_should_return_a_runningtotal_price()
         {
+            var sut = CreateSUT();
 
-            Assert.IsTrue(false);
+            var response = sut.GetTotalPrice();
+
+            Assert.IsTrue(response >= 0.0m);
         }
     }
 }
