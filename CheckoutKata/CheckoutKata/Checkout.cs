@@ -11,8 +11,19 @@ namespace CheckoutKata
     {
         public decimal Scan(string sku)
         {
+            var grandTotal = 0.0m;
 
-            throw new NotImplementedException();
+            //store the scanned product with the others...
+            var scanned = new Dictionary<string, int>();
+            
+            // whip through the products and total them up
+            
+            // get price of product being scanned
+            var priceOfProduct = 50m;
+
+            return grandTotal += priceOfProduct;
+            //return total
+
         }
 
         public decimal GetTotalPrice()
