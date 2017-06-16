@@ -1,4 +1,5 @@
-﻿using CheckoutKata.Interfaces.DAL;
+﻿using System.Linq;
+using CheckoutKata.Interfaces.DAL;
 using CheckoutKata.Interfaces.Helpers;
 
 namespace CheckoutKata.Helpers
@@ -14,10 +15,25 @@ namespace CheckoutKata.Helpers
 
         public decimal Get(string sku, int quantity)
         {
+            decimal? price = 0.0m;
+
             var productsList = _getProductsStubData.GetProductsData();
+            
+            var product = productsList.Single(x => x.Sku == sku);
+            
+            var productOfferQuantity = product.OfferQuantity;
 
+            var productOfferPrice = product.OfferQuantityPrice;
 
-            return 0.0m;
+            int? productQuantityOutsideOffer;
+
+            if (productOfferQuantity != 0 && productOfferPrice != 0m)
+            {
+                productQuantityOutsideOffer = quantity % productOfferQuantity;
+                price = ((quantity - productQuantityOutsideOffer) / product.OfferQuantity) * productOfferPrice;
+            }
+            
+            return price.Value;
         }
     }
 }

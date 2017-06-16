@@ -61,7 +61,7 @@ namespace CheckoutKataTests.Helpers
 
             var quantity = 5;
 
-            var expected = 100m;
+            var expected = 0m;
 
             _mockGetProductsStubData.Setup(x => x.GetProductsData()).Returns(productsData);
 

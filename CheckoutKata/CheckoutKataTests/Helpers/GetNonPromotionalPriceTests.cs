@@ -86,7 +86,7 @@ namespace CheckoutKataTests.Helpers
 
             var response = sut.Get(sku, quantity);
 
-            Assert.AreEqual(response, expected);
+            Assert.AreEqual(expected, response);
         }
     }
 }
