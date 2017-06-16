@@ -44,7 +44,11 @@
     <Compile Include="Entities\Product.cs" />
     <Compile Include="DAL\GetProductsStubData.cs" />
     <Compile Include="Helpers\AddToScannedItems.cs" />
+    <Compile Include="Helpers\GetNonPromotionalPrice.cs" />
+    <Compile Include="Helpers\GetPromotionalPrice.cs" />
     <Compile Include="Helpers\GetTotalPricePerSku.cs" />
+    <Compile Include="Interfaces\Helpers\IGetNonPromotionalPrice.cs" />
+    <Compile Include="Interfaces\Helpers\IGetPromotionalPrice.cs" />
     <Compile Include="Interfaces\Helpers\IGetTotalPricePerSku.cs" />
     <Compile Include="Interfaces\DAL\IGetProductsStubData.cs" />
     <Compile Include="Interfaces\Entities\IProduct.cs" />

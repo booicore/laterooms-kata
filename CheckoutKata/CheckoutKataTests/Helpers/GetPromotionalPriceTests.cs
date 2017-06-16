@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using CheckoutKata.Helpers;
 using NUnit.Framework;
 
 namespace CheckoutKataTests.Helpers

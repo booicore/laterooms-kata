@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using CheckoutKata.Helpers;
+using NUnit.Framework;
 
 namespace CheckoutKataTests.Helpers
 {
