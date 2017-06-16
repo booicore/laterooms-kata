@@ -21,8 +21,14 @@ namespace CheckoutKata
             var grandTotal = 0.0m;
 
             //add to scanned total
-            
-            
+            if (Scanned.ContainsKey(sku)) {
+                Scanned[sku] += 1;
+            }
+            if (!Scanned.ContainsKey(sku))
+            {
+                Scanned.Add(sku, 1);
+            }
+
             // whip through the products and total them up
 
             // Get a list of the products/prices from somewhere - STUB DATA
@@ -40,7 +46,7 @@ namespace CheckoutKata
 
         public int GetNumberOfScannedItems()
         {
-           return Scanned.Count;
+            return Scanned.Sum(product => product.Value);
         }
     }
 }
