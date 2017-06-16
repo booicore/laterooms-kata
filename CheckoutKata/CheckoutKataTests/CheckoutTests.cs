@@ -39,5 +39,22 @@ namespace CheckoutKataTests
 
             Assert.AreEqual(response, 50m);
         }
+
+        [Test]
+        public void Checkout_scan_get_total_scanned_items()
+        {
+            var sku = "A";
+
+            var sut = CreateSUT();
+
+            sut.Scan(sku);
+            sut.Scan(sku);
+            sut.Scan(sku);
+            sut.Scan(sku);
+
+            var response = sut.GetNumberOfScannedItems();
+
+            Assert.AreEqual(4,response);
+        }
     }
 }
