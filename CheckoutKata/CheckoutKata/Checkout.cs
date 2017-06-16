@@ -32,7 +32,7 @@ namespace CheckoutKata
 
         public decimal GetTotalPrice()
         {
-            return 0.0m;
+            return _grandTotal.GetGrandTotal(Scanned);
         }
 
         public int GetNumberOfScannedItems()

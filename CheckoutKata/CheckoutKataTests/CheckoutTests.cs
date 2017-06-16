@@ -30,9 +30,13 @@ namespace CheckoutKataTests
         {
             var sut = CreateSUT();
 
+            var scanned = new Dictionary<string, int>();
+
+            _mockGrandTotal.Setup(x => x.GetGrandTotal(scanned)).Returns(10m);
+
             var response = sut.GetTotalPrice();
 
-            Assert.IsTrue(response >= 0.0m);
+            Assert.IsTrue(response >= 10.0m);
         }
 
         [Test]
