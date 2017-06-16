@@ -6,21 +6,20 @@ namespace CheckoutKata.Helpers
 {
     public class GrandTotal : IGrandTotal
     {
+        private IGetTotalPricePerSku _getTotalPricePerSku;
+
+        public GrandTotal(IGetTotalPricePerSku getTotalPricePerSku)
+        {
+            _getTotalPricePerSku = getTotalPricePerSku;
+        }
         
         public decimal GetGrandTotal(Dictionary<string, int> scanned)
         {
             var grandTotal = 0.0m;
-
-            // loop through scanned 
+            
             foreach (var skuAndTotalPerSku in scanned)
             {
-                // we need a GetTotalPricePerSku(skuAndTotalPerSku) class - 
-
-                    // get a product price per product, plus calculate the promotion price total and any single price totals
-                    // add them together: promotionTotal + singlesTotal
-                    // predicting using Modulus here
-
-                // get totals for each product type and add them to the grandTotal
+                grandTotal += _getTotalPricePerSku.GetPrice(skuAndTotalPerSku.Key, skuAndTotalPerSku.Value);
             }
             
             return grandTotal;

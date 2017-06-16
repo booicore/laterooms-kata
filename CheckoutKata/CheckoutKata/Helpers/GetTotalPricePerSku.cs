@@ -6,6 +6,10 @@ namespace CheckoutKata.Helpers
     {
         public decimal GetPrice(string sku, int quantity)
         {
+            //TODO: Get the promotional cost 
+            // get the non-promotional cost
+            // add the two totals together
+
             throw new System.NotImplementedException();
         }
     }
