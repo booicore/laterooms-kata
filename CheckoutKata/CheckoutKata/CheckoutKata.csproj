@@ -43,8 +43,10 @@
     <Compile Include="Checkout.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="DAL\GetProductsStubData.cs" />
+    <Compile Include="Helpers\AddToScannedItems.cs" />
     <Compile Include="Interfaces\DAL\IGetProductsStubData.cs" />
     <Compile Include="Interfaces\Entities\IProduct.cs" />
+    <Compile Include="Interfaces\Helpers\IAddToScannedItems.cs" />
     <Compile Include="Interfaces\ICheckout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -61,7 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckoutTests.cs" />
-    <Compile Include="GetProductsStubDataTests.cs" />
+    <Compile Include="DAL\GetProductsStubDataTests.cs" />
+    <Compile Include="Helpers\AddToScannedItemsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

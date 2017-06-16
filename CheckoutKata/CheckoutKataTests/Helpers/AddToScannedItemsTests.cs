@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using CheckoutKata.Helpers;
 using NUnit.Framework;
 
 namespace CheckoutKataTests.Helpers
@@ -34,8 +35,8 @@ namespace CheckoutKataTests.Helpers
             var sut = CreateSUT();
 
             var response = sut.AddToScanned(scanned, skuB);
-
-            Assert.AreEqual(99, response[1].Value);
+            
+            Assert.AreEqual(3, response["B"]);
         }
     }
 }
