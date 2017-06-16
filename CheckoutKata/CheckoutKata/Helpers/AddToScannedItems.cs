@@ -7,7 +7,14 @@ namespace CheckoutKata.Helpers
     {
         public Dictionary<string, int> AddToScanned(Dictionary<string, int> scanned, string sku)
         {
-            //TODO: add sku to scannned here
+            if (scanned.ContainsKey(sku))
+            {
+                scanned[sku] += 1;
+            }
+            if (!scanned.ContainsKey(sku))
+            {
+                scanned.Add(sku, 1);
+            }
 
             return scanned;
         }
