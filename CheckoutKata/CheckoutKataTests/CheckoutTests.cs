@@ -11,16 +11,18 @@ namespace CheckoutKataTests
     public class CheckoutTests
     {
         private Mock<IAddToScannedItems> _mockAddToScannedItems;
+        private Mock<IGrandTotal> _mockGrandTotal;
 
         [SetUp]
         public void SetUp()
         {
             _mockAddToScannedItems = new Mock<IAddToScannedItems>();
+            _mockGrandTotal = new Mock<IGrandTotal>();
         }
 
         private Checkout CreateSUT()
         {
-            return new Checkout(_mockAddToScannedItems.Object);
+            return new Checkout(_mockAddToScannedItems.Object, _mockGrandTotal.Object);
         }
 
         [Test]

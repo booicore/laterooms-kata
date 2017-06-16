@@ -11,30 +11,23 @@ namespace CheckoutKata
     public class Checkout : ICheckout
     {
         private IAddToScannedItems _addToScannedItems;
+        private IGrandTotal _grandTotal;
 
         public Dictionary<string, int> Scanned { get; set; }
 
-        public Checkout(IAddToScannedItems addToScannedItems)
+        public Checkout(IAddToScannedItems addToScannedItems, IGrandTotal grandTotal)
         {
             _addToScannedItems = addToScannedItems;
+            _grandTotal = grandTotal;
 
             Scanned = new Dictionary<string, int>();
         }
 
         public decimal Scan(string sku)
         {
-            var grandTotal = 0.0m;
-            
             Scanned =_addToScannedItems.AddToScanned(Scanned, sku);
 
-            // whip through the products and total them up
-
-            // Get a list of the products/prices from somewhere - STUB DATA
-            var priceOfProduct = 50m;
-
-            return grandTotal += priceOfProduct;
-            //return total
-
+            return _grandTotal.GetGrandTotal(Scanned);
         }
 
         public decimal GetTotalPrice()
