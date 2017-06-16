@@ -24,8 +24,7 @@ namespace CheckoutKata
         public decimal Scan(string sku)
         {
             var grandTotal = 0.0m;
-
-            //add to scanned total
+            
             Scanned =_addToScannedItems.AddToScanned(Scanned, sku);
 
             // whip through the products and total them up

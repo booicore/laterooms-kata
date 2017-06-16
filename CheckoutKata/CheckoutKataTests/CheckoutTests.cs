@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CheckoutKata;
 using CheckoutKata.Interfaces.Helpers;
 using Moq;
@@ -48,14 +49,15 @@ namespace CheckoutKataTests
         public void Checkout_scan_get_total_scanned_items()
         {
             var sku = "A";
+            var scanned = new Dictionary<string, int>();
+            scanned.Add(sku, 4);
+
+            _mockAddToScannedItems.Setup(x => x.AddToScanned(It.IsAny< Dictionary<string, int>> (), sku)).Returns(scanned);
 
             var sut = CreateSUT();
 
             sut.Scan(sku);
-            sut.Scan(sku);
-            sut.Scan(sku);
-            sut.Scan(sku);
-
+            
             var response = sut.GetNumberOfScannedItems();
 
             Assert.AreEqual(4,response);
