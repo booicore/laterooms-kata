@@ -45,6 +45,7 @@ namespace CheckoutKataTests
             scanned.Add(sku, 4);
 
             _mockAddToScannedItems.Setup(x => x.AddToScanned(It.IsAny<Dictionary<string, int>>(), sku)).Returns(scanned);
+            _mockGrandTotal.Setup(x => x.GetGrandTotal(scanned)).Returns(50.0m);
 
             var sut = CreateSUT();
 
