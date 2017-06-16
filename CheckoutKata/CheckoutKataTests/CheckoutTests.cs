@@ -38,6 +38,12 @@ namespace CheckoutKataTests
         {
             var sku = "A";
 
+            var scanned = new Dictionary<string, int>();
+
+            scanned.Add(sku, 4);
+
+            _mockAddToScannedItems.Setup(x => x.AddToScanned(It.IsAny<Dictionary<string, int>>(), sku)).Returns(scanned);
+
             var sut = CreateSUT();
 
             var response = sut.Scan(sku);
