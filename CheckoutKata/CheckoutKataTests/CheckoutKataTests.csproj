@@ -63,6 +63,7 @@
     <Compile Include="CheckoutTests.cs" />
     <Compile Include="DAL\GetProductsStubDataTests.cs" />
     <Compile Include="Helpers\AddToScannedItemsTests.cs" />
+    <Compile Include="Helpers\GrandTotalTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
