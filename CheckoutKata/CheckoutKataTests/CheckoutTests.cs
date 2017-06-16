@@ -1,5 +1,7 @@
 ﻿using System;
 using CheckoutKata;
+using CheckoutKata.Interfaces.Helpers;
+using Moq;
 using NUnit.Framework;
 
 namespace CheckoutKataTests
@@ -7,15 +9,17 @@ namespace CheckoutKataTests
     [TestFixture]
     public class CheckoutTests
     {
+        private Mock<IAddToScannedItems> _mockAddToScannedItems;
+
         [SetUp]
         public void SetUp()
         {
-            
+            _mockAddToScannedItems = new Mock<IAddToScannedItems>();
         }
 
         private Checkout CreateSUT()
         {
-            return new Checkout();
+            return new Checkout(_mockAddToScannedItems.Object);
         }
 
         [Test]

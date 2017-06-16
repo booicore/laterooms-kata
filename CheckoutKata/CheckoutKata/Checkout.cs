@@ -4,15 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckoutKata.Interfaces;
+using CheckoutKata.Interfaces.Helpers;
 
 namespace CheckoutKata
 {
     public class Checkout : ICheckout
     {
+        private IAddToScannedItems _addToScannedItems;
+
         public Dictionary<string, int> Scanned { get; set; }
 
-        public Checkout()
+        public Checkout(IAddToScannedItems addToScannedItems)
         {
+            _addToScannedItems = addToScannedItems;
+
             Scanned = new Dictionary<string, int>();
         }
 
@@ -21,13 +26,7 @@ namespace CheckoutKata
             var grandTotal = 0.0m;
 
             //add to scanned total
-            if (Scanned.ContainsKey(sku)) {
-                Scanned[sku] += 1;
-            }
-            if (!Scanned.ContainsKey(sku))
-            {
-                Scanned.Add(sku, 1);
-            }
+            Scanned =_addToScannedItems.AddToScanned(Scanned, sku);
 
             // whip through the products and total them up
 
