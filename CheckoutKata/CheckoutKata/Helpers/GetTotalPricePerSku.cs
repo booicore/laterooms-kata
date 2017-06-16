@@ -15,11 +15,7 @@ namespace CheckoutKata.Helpers
 
         public decimal GetPrice(string sku, int quantity)
         {
-            var promoprice = _getPromotionalPrice.Get(sku, quantity);
-            
-            var nonpromoprice = _getNonPromotionalPrice.Get(sku, quantity);
-            
-            return promoprice + nonpromoprice; 
+            return _getPromotionalPrice.Get(sku, quantity) + _getNonPromotionalPrice.Get(sku, quantity); 
         }
     }
 }
