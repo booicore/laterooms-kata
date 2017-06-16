@@ -7,7 +7,6 @@ namespace CheckoutKata.Interfaces
         Dictionary<string, int> Scanned { get; set; }
         decimal Scan(string sku);
         decimal GetTotalPrice();
-
-        int GetNumberOfScannedItems();
+       
     }
 }

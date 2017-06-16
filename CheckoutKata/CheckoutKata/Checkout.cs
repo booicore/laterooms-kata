@@ -34,10 +34,6 @@ namespace CheckoutKata
         {
             return _grandTotal.GetGrandTotal(Scanned);
         }
-
-        public int GetNumberOfScannedItems()
-        {
-            return Scanned.Sum(product => product.Value);
-        }
+        
     }
 }
